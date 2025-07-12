@@ -39,6 +39,7 @@ EXPOSE 8080
 # Switch to a non-root user for security
 USER appuser
 
-# Define the command to run the application
-# CMD ["gunicorn", "-c", "gunicorn_conf.py", "main:app"] # use with gunicorn config file
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn_worker.UvicornWorker", "--bind", "0.0.0.0:8080", "main:app"]
+# Define the command to run the application ,use with gunicorn config file
+CMD ["gunicorn", "-c", "gunicorn_conf.py", "main:app"] 
+
+#CMD ["gunicorn", "-w", "4", "-k", "uvicorn_worker.UvicornWorker", "--bind", "0.0.0.0:8080", "main:app"]
